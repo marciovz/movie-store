@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
-  background: ${(props) => props.theme['base-header']};
+  width: 100%;
+  background: ${(props) => props.theme['green-200']};
 `
 export const HeaderContent = styled.div`
   max-width: 80rem;

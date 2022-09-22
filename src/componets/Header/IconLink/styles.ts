@@ -16,19 +16,18 @@ export const IconNavLink = styled(NavLink)`
     justify-content: center;
     font-size: 0.75rem;
     line-height: 0;
-
-    background: ${(props) => props.theme['base-icon-amount-header']};
+    background: ${(props) => props.theme['yellow-400']};
     border-radius: 50%;
   }
 
   svg {
     width: 2rem;
     height: 2rem;
-    color: ${(props) => props.theme['base-icon-header']};
-    transition: background 0.5s ease;
+    color: ${(props) => props.theme['gray-600']};
+    transition: color 0.2s;
 
     :hover {
-      color: ${(props) => props.theme['baser-icon-header-hover']};
+      color: ${(props) => props.theme['gray-500']};
     }
   }
 `
