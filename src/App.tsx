@@ -1,7 +1,8 @@
 function App() {
-  
   return (
-    <p>Home - Movie Store</p>
+    <>
+      <p>Home - Movie Store</p>
+    </>
   )
 }
 
