@@ -4,6 +4,7 @@ import { Heart, Star, ShoppingCart } from 'phosphor-react'
 import { formatPrice } from '../../utils/formatPrice'
 import { formatDateInFull } from '../../utils/formatDateInFull'
 import { FavoriteMovieContext } from '../../context/FavoriteContext'
+import { CartMovieContext } from '../../context/CartContext'
 
 import { CardContainer, CardImage, MovieInfo } from './styles'
 
@@ -32,6 +33,7 @@ export function MovieCard({ movieProperties }: PropsMovieCard) {
   const [movie, setMovie] = useState<IMovieCard>()
 
   const { addNewFavoriteMovies } = useContext(FavoriteMovieContext)
+  const { addNewCartMovies } = useContext(CartMovieContext)
 
   useEffect(() => {
     setMovie({
@@ -44,14 +46,24 @@ export function MovieCard({ movieProperties }: PropsMovieCard) {
     })
   }, [movieProperties])
 
-  const handleAddFavoritMovies = () => {
-    if (!movie) return
-    addNewFavoriteMovies({
-      id: movie.id,
-      title: movie.title,
-      imageUrl: movie.backdrop_path,
-      price,
-    })
+  const handleAddToFavorite = () => {
+    movie &&
+      addNewFavoriteMovies({
+        id: movie.id,
+        title: movie.title,
+        imageUrl: movie.backdrop_path,
+        price,
+      })
+  }
+
+  const handleAddToCart = () => {
+    movie &&
+      addNewCartMovies({
+        id: movie.id,
+        title: movie.title,
+        imageUrl: movie.backdrop_path,
+        price,
+      })
   }
 
   return (
@@ -61,7 +73,7 @@ export function MovieCard({ movieProperties }: PropsMovieCard) {
           <CardImage>
             <img src={`${ImageUrl}${movie.backdrop_path}`} alt="" />
             <button className="favorite" onClick={() => {}}>
-              <Heart weight="fill" onClick={handleAddFavoritMovies} />
+              <Heart weight="fill" onClick={handleAddToFavorite} />
             </button>
           </CardImage>
 
@@ -77,7 +89,7 @@ export function MovieCard({ movieProperties }: PropsMovieCard) {
 
             <div className="toCart">
               <span>{movie.priceFormated}</span>
-              <button>
+              <button onClick={handleAddToCart}>
                 <ShoppingCart weight="fill" />
                 Adicionar
               </button>

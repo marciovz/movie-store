@@ -4,12 +4,14 @@ import { Heart, ShoppingCart } from 'phosphor-react'
 
 import { IconLink } from './IconLink'
 import { FavoriteMovieContext } from '../../context/FavoriteContext'
+import { CartMovieContext } from '../../context/CartContext'
 import logoMovieStore from '../../assets/logo-movie-store.svg'
 
 import { HeaderContainer, HeaderContent } from './styles'
 
 export function Header() {
   const { amountFavoriteMovies } = useContext(FavoriteMovieContext)
+  const { amountCartMovies } = useContext(CartMovieContext)
   return (
     <HeaderContainer>
       <HeaderContent>
@@ -26,7 +28,7 @@ export function Header() {
             <Heart weight="fill" />
           </IconLink>
 
-          <IconLink link="/checkout" title="amount" amount={1}>
+          <IconLink link="/checkout" title="amount" amount={amountCartMovies}>
             <ShoppingCart weight="fill" />
           </IconLink>
         </nav>

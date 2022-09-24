@@ -13,7 +13,7 @@ interface IFavoriteMovie {
   price: number
 }
 
-interface IFavoriteMovieContex {
+interface IFavoriteMovieContext {
   favoriteMovies: IFavoriteMovie[]
   amountFavoriteMovies: number
   addNewFavoriteMovies: (favoriteMovie: IFavoriteMovie) => void
@@ -23,7 +23,7 @@ interface PropsFavoriteMovieContextProvider {
   children: ReactNode
 }
 
-export const FavoriteMovieContext = createContext({} as IFavoriteMovieContex)
+export const FavoriteMovieContext = createContext({} as IFavoriteMovieContext)
 
 export function FavoriteMovieContextProvider({
   children,
