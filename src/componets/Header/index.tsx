@@ -1,12 +1,15 @@
+import { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 import { Heart, ShoppingCart } from 'phosphor-react'
 
+import { IconLink } from './IconLink'
+import { FavoriteMovieContext } from '../../context/FavoriteContext'
 import logoMovieStore from '../../assets/logo-movie-store.svg'
 
 import { HeaderContainer, HeaderContent } from './styles'
-import { IconLink } from './IconLink'
 
 export function Header() {
+  const { amountFavoriteMovies } = useContext(FavoriteMovieContext)
   return (
     <HeaderContainer>
       <HeaderContent>
@@ -15,7 +18,11 @@ export function Header() {
         </NavLink>
 
         <nav>
-          <IconLink link="/favorite" title="favoritos" amount={1}>
+          <IconLink
+            link="/favorite"
+            title="favoritos"
+            amount={amountFavoriteMovies}
+          >
             <Heart weight="fill" />
           </IconLink>
 

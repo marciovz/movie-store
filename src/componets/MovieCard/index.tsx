@@ -1,8 +1,9 @@
+import { useContext, useEffect, useState } from 'react'
 import { Heart, Star, ShoppingCart } from 'phosphor-react'
-import { useEffect, useState } from 'react'
 
 import { formatPrice } from '../../utils/formatPrice'
 import { formatDateInFull } from '../../utils/formatDateInFull'
+import { FavoriteMovieContext } from '../../context/FavoriteContext'
 
 import { CardContainer, CardImage, MovieInfo } from './styles'
 
@@ -25,9 +26,12 @@ interface IMovieCard extends IMovie {
 }
 
 const ImageUrl = import.meta.env.VITE_IMG
+const price = 79.25
 
 export function MovieCard({ movieProperties }: PropsMovieCard) {
   const [movie, setMovie] = useState<IMovieCard>()
+
+  const { addNewFavoriteMovies } = useContext(FavoriteMovieContext)
 
   useEffect(() => {
     setMovie({
@@ -36,9 +40,19 @@ export function MovieCard({ movieProperties }: PropsMovieCard) {
         date: movieProperties.release_date,
         dateStyle: 'long',
       }),
-      priceFormated: formatPrice(79.25),
+      priceFormated: formatPrice(price),
     })
   }, [movieProperties])
+
+  const handleAddFavoritMovies = () => {
+    if (!movie) return
+    addNewFavoriteMovies({
+      id: movie.id,
+      title: movie.title,
+      imageUrl: movie.backdrop_path,
+      price,
+    })
+  }
 
   return (
     <>
@@ -47,7 +61,7 @@ export function MovieCard({ movieProperties }: PropsMovieCard) {
           <CardImage>
             <img src={`${ImageUrl}${movie.backdrop_path}`} alt="" />
             <button className="favorite" onClick={() => {}}>
-              <Heart weight="fill" />
+              <Heart weight="fill" onClick={handleAddFavoritMovies} />
             </button>
           </CardImage>
 

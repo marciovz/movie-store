@@ -7,18 +7,21 @@ import { Router } from './Router'
 
 import { defaultTheme } from './styles/themes/default'
 import { GlobalStyle } from './styles/global'
+import { FavoriteMovieContextProvider } from './context/FavoriteContext'
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <ThemeProvider theme={defaultTheme}>
-        <BrowserRouter>
-          <Router />
-        </BrowserRouter>
+    <FavoriteMovieContextProvider>
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider theme={defaultTheme}>
+          <BrowserRouter>
+            <Router />
+          </BrowserRouter>
 
-        <GlobalStyle />
-      </ThemeProvider>
-    </QueryClientProvider>
+          <GlobalStyle />
+        </ThemeProvider>
+      </QueryClientProvider>
+    </FavoriteMovieContextProvider>
   )
 }
 
