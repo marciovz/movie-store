@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
-  flex: 1;
   padding-left: 1rem;
   border: 1px solid ${(props) => props.theme['gray-400']};
   border-radius: 8px;

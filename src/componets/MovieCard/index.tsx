@@ -10,18 +10,10 @@ interface IMovie {
   id: number
   title: string
   genre_ids: number[]
-  vote_average: 8.7
-  release_date: string
-  poster_path: string
-  backdrop_path: string
-
-  popularity: number
-  original_title: string
   vote_count: number
+  release_date: string
+  backdrop_path: string
   adult: boolean
-  original_language: string
-  overview: string
-  video: boolean
 }
 
 interface PropsMovieCard {
