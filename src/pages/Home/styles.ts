@@ -9,14 +9,13 @@ export const HomeContainer = styled.div`
     margin-top: -1.687rem;
   }
 `
-
-export const HomeContent = styled.div`
-  max-width: 80rem;
-  margin: 0 auto;
-  padding: 1rem 0.625rem;
+export const ListMoviesContainer = styled.main`
+  margin: 3rem 0;
+  padding: 2rem;
+  width: 80rem;
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
-
-  border: 1px solid red;
+  gap: 50px;
+  border-radius: 1rem;
 `

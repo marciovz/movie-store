@@ -1,6 +1,6 @@
 export const defaultTheme = {
   white: '#ffffff',
-  background: '#fafafa',
+  background: '#f1f1f8',
 
   'gray-100': '#E1E1E6',
   'gray-300': '#C4C4CC',
