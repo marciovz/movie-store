@@ -4,6 +4,7 @@ import { QueryClientProvider } from 'react-query'
 
 import { CartMovieContextProvider } from './context/CartContext'
 import { FavoriteMovieContextProvider } from './context/FavoriteContext'
+import { RequestMovieContextProvider } from './context/RequestMoviesContext'
 import { queryClient } from './services/queryClient'
 import { Router } from './Router'
 
@@ -14,15 +15,17 @@ function App() {
   return (
     <CartMovieContextProvider>
       <FavoriteMovieContextProvider>
-        <QueryClientProvider client={queryClient}>
-          <ThemeProvider theme={defaultTheme}>
-            <BrowserRouter>
-              <Router />
-            </BrowserRouter>
+        <RequestMovieContextProvider>
+          <QueryClientProvider client={queryClient}>
+            <ThemeProvider theme={defaultTheme}>
+              <BrowserRouter>
+                <Router />
+              </BrowserRouter>
 
-            <GlobalStyle />
-          </ThemeProvider>
-        </QueryClientProvider>
+              <GlobalStyle />
+            </ThemeProvider>
+          </QueryClientProvider>
+        </RequestMovieContextProvider>
       </FavoriteMovieContextProvider>
     </CartMovieContextProvider>
   )

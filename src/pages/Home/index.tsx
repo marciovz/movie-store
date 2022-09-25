@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Spinner } from 'phosphor-react'
 
 import { Header } from '../../componets/Header'
@@ -8,6 +8,7 @@ import { MovieCard } from '../../componets/MovieCard'
 import { useMovies } from '../../services/hooks/useMovies'
 
 import { HomeContainer, ListMoviesContainer } from './styles'
+import { RequestMovieContext } from '../../context/RequestMoviesContext'
 
 interface IMovie {
   id: number
@@ -19,11 +20,10 @@ interface IMovie {
   adult: boolean
 }
 
-const page = 1
-
 export function Home() {
   const [movies, setMovies] = useState<IMovie[]>([])
-  const { data } = useMovies(page)
+  const { page, query } = useContext(RequestMovieContext)
+  const { data } = useMovies({ page, query })
 
   useEffect(() => {
     if (!data) return
@@ -33,7 +33,7 @@ export function Home() {
   return (
     <HomeContainer>
       <Header />
-      <InputFilter updateTextFilter={() => {}} />
+      <InputFilter />
       <ListMoviesContainer>
         {movies.length === 0 ? (
           <Spinner size={32} className="spinner" />

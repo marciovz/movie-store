@@ -26,12 +26,27 @@ interface GetMoviesResponse {
   total_results: number
 }
 
+interface PropsGEtMovies {
+  page?: number
+  query?: string
+}
+
 const moviesUrl = import.meta.env.VITE_API
+const moviesUrlSearch = import.meta.env.VITE_API_SEARCH
+
 const apiKey = import.meta.env.VITE_API_KEY
-const url = `${moviesUrl}top_rated` // ?${apiKey}
+// const url = `${moviesUrl}top_rated` // ?${apiKey}
 const api = axios.create()
 
-async function getMovies(page = 1): Promise<GetMoviesResponse> {
+async function getMovies({
+  page = 1,
+  query = '',
+}: PropsGEtMovies): Promise<GetMoviesResponse> {
+  const url =
+    !query || query === ''
+      ? `${moviesUrl}top_rated`
+      : `${moviesUrlSearch}/?query=${query}`
+
   const { data } = await api.get(url, {
     params: {
       api_key: apiKey,
@@ -59,8 +74,12 @@ async function getMovies(page = 1): Promise<GetMoviesResponse> {
   }
 }
 
-export function useMovies(page: number) {
-  return useQuery(['movies', page], async () => await getMovies(page), {
-    staleTime: 1000 * 60 * 10, // 10 minutos
-  }) as UseQueryResult<GetMoviesResponse, unknown>
+export function useMovies({ page = 1, query = '' }: PropsGEtMovies) {
+  return useQuery(
+    ['movies', page, query],
+    async () => await getMovies({ page, query }),
+    {
+      staleTime: 1000 * 60 * 10, // 10 minutos
+    },
+  ) as UseQueryResult<GetMoviesResponse, unknown>
 }

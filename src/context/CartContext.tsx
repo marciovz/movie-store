@@ -36,8 +36,6 @@ export function CartMovieContextProvider({
   const [cartMovies, setCartMovies] = useState<ICartMovie[]>([])
   const [amountCartMovies, setAmountCartMovies] = useState(0)
 
-  console.log(cartMovies)
-
   useEffect(() => {
     setAmountCartMovies(cartMovies.length)
   }, [cartMovies])
