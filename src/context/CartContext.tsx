@@ -22,6 +22,7 @@ interface ICartMovieContext {
   addNewCartMovies: (cartMovie: IMovieWithoutAmount) => void
   removeMovieFromCart: (id: number) => void
   removeOneMovieItemFromCart: (id: number) => void
+  removeAllMoviesFromCart: () => void
 }
 
 interface PropsCartMovieContextProvider {
@@ -77,7 +78,11 @@ export function CartMovieContextProvider({
 
     amount -= 1
     updatedCartMovies[index].amount = amount
-    setCartMovies(updatedCartMovies)
+    setCartMovies([...updatedCartMovies])
+  }
+
+  function removeAllMoviesFromCart() {
+    setCartMovies([])
   }
 
   return (
@@ -88,6 +93,7 @@ export function CartMovieContextProvider({
         amountCartMovies,
         removeMovieFromCart,
         removeOneMovieItemFromCart,
+        removeAllMoviesFromCart,
       }}
     >
       {children}

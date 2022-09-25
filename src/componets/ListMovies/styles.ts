@@ -2,10 +2,11 @@ import styled from 'styled-components'
 
 export const ListMoviesContainer = styled.main`
   display: flex;
+  flex: 1;
   flex-wrap: wrap;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: space-around;
   gap: 50px;
-  border-radius: 1rem;
 
   svg.spinner {
     margin: 12rem auto;
