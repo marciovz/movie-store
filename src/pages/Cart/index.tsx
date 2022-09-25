@@ -1,5 +1,6 @@
 import { Trash } from 'phosphor-react'
 import { useContext, useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import { CartMovieContext } from '../../context/CartContext'
 import { formatPrice } from '../../utils/formatPrice'
@@ -22,6 +23,8 @@ export function Cart() {
 
   const { cartMovies, removeAllMoviesFromCart, removeOneMovieItemFromCart } =
     useContext(CartMovieContext)
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     const updatedNewCartMovies = cartMovies.map((itemCart) => {
@@ -49,6 +52,10 @@ export function Cart() {
     removeOneMovieItemFromCart(id)
   }
 
+  function handleRedirectToCheckout() {
+    navigate('/checkout')
+  }
+
   return (
     <CartContainer>
       <header>
@@ -71,7 +78,9 @@ export function Cart() {
       ))}
 
       <footer>
-        <button disabled={emptyCart}>Finalizar Pedido</button>
+        <button disabled={emptyCart} onClick={handleRedirectToCheckout}>
+          Finalizar Pedido
+        </button>
 
         <div>
           <p>Total:</p>

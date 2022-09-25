@@ -17,6 +17,8 @@ interface IFavoriteMovieContext {
   favoriteMovies: IFavoriteMovie[]
   amountFavoriteMovies: number
   addNewFavoriteMovies: (favoriteMovie: IFavoriteMovie) => void
+  removeAllFavoritesMovies: () => void
+  removeOneFavoriteMovie: (id: number) => void
 }
 
 interface PropsFavoriteMovieContextProvider {
@@ -46,9 +48,26 @@ export function FavoriteMovieContextProvider({
     setFavoriteMovies((state) => [...state, { id, title, imageUrl, price }])
   }
 
+  function removeAllFavoritesMovies() {
+    setFavoriteMovies([])
+  }
+
+  function removeOneFavoriteMovie(id: number) {
+    const updatedFavoriteList = favoriteMovies.filter(
+      (movie) => movie.id !== id,
+    )
+    setFavoriteMovies([...updatedFavoriteList])
+  }
+
   return (
     <FavoriteMovieContext.Provider
-      value={{ favoriteMovies, addNewFavoriteMovies, amountFavoriteMovies }}
+      value={{
+        favoriteMovies,
+        addNewFavoriteMovies,
+        amountFavoriteMovies,
+        removeAllFavoritesMovies,
+        removeOneFavoriteMovie,
+      }}
     >
       {children}
     </FavoriteMovieContext.Provider>
