@@ -28,7 +28,7 @@ export function Header() {
             <Heart weight="fill" />
           </IconLink>
 
-          <IconLink link="/checkout" title="amount" amount={amountCartMovies}>
+          <IconLink link="/cart" title="amount" amount={amountCartMovies}>
             <ShoppingCart weight="fill" />
           </IconLink>
         </nav>
