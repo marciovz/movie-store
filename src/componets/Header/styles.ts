@@ -20,4 +20,16 @@ export const HeaderContent = styled.div`
     display: flex;
     gap: 2rem;
   }
+
+  @media (max-width: 1100px) {
+    max-width: 69rem;
+  }
+
+  @media (max-width: 800px) {
+    max-width: 40rem;
+  }
+
+  @media (max-width: 540px) {
+    max-width: 24rem;
+  }
 `
