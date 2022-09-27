@@ -6,10 +6,27 @@
 
 [Movie Store](https://github.com/marciovz/movie-store) é uma loja de filmes fictícia, onde o cliente pode procurar por um determinado filme, marcá-lo como favoritos, inserir em um carrinho de compra e finalizar sua compra.
 
-<p align="center">
+Acesse o [Site Movie Store](https://movie-store-mvz.vercel.app/) na web.
+
+<div style="display: flex; flex-direction: column; align-items: center; ">
+
+<div style="display: flex; gap: 10px">
+<img alt="Movie Store Main"
+src="https://raw.githubusercontent.com/marciovz/movie-store/main/src/assets/readme-files/screen-main.png" width="200" />
 <img alt="Movie Store Main" 
-src="https://github.com/marciovz/movie-store/src/assets/readme-files/screen-main.png"  />
-</p>
+src="https://raw.githubusercontent.com/marciovz/movie-store/main/src/assets/readme-files/screen-cart.png" width="200" />
+</div>
+
+<div style="display: flex; align-items: center; gap: 10px; margin-top: 10px">
+<img alt="Movie Store Main" 
+src="https://raw.githubusercontent.com/marciovz/movie-store/main/src/assets/readme-files/screen-checkout.png" width="200" />
+<img alt="Movie Store Main" 
+src="https://raw.githubusercontent.com/marciovz/movie-store/main/src/assets/readme-files/screen-confimation.png" width="200" />
+<img alt="Movie Store Main" 
+src="https://raw.githubusercontent.com/marciovz/movie-store/main/src/assets/readme-files/screen-favorites.png" width="200" />
+
+</div>
+</div>
 
 ## 1 - Requisitos
 
@@ -57,3 +74,12 @@ src="https://github.com/marciovz/movie-store/src/assets/readme-files/screen-main
 - yup
 - axios
 - Phosphor React
+
+## Melhorias
+
+- Melhora o visual do layout
+- Fazer o layout para mobile
+- Carrocel de filmes horizontal com paginação
+- mascara nos inputs do formulário
+
+
