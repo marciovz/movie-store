@@ -2,30 +2,32 @@
   <img src="https://raw.githubusercontent.com/marciovz/movie-store/main/src/assets/logo-movie-store.svg" width="200" alt="Movie Store" />
 </div>
 
-# Introduction
+<h1 align="center">MOVIE STORE</h1>
+
+# Introdução
 
 [Movie Store](https://github.com/marciovz/movie-store) é uma loja de filmes fictícia, onde o cliente pode procurar por um determinado filme, marcá-lo como favoritos, inserir em um carrinho de compra e finalizar sua compra.
 
 Acesse o [Site Movie Store](https://movie-store-mvz.vercel.app/) na web.
 
-<div style="display: flex; flex-direction: column; align-items: center; ">
+<div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
 
-<div style="display: flex; gap: 10px">
+<div style="display: flex; align-items: center; justify-content: center; flex; gap: 10px;">
 <img alt="Movie Store Main"
-src="https://raw.githubusercontent.com/marciovz/movie-store/main/src/assets/readme-files/screen-main.png" width="200" />
+src="https://raw.githubusercontent.com/marciovz/movie-store/main/src/assets/readme-files/screen-main.png" width="250" />
 <img alt="Movie Store Main" 
-src="https://raw.githubusercontent.com/marciovz/movie-store/main/src/assets/readme-files/screen-cart.png" width="200" />
+src="https://raw.githubusercontent.com/marciovz/movie-store/main/src/assets/readme-files/screen-cart.png" width="250" />
+<img alt="Movie Store Main" 
+src="https://raw.githubusercontent.com/marciovz/movie-store/main/src/assets/readme-files/screen-favorites.png" width="250" />
 </div>
 
-<div style="display: flex; align-items: center; gap: 10px; margin-top: 10px">
+<div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 10px">
 <img alt="Movie Store Main" 
-src="https://raw.githubusercontent.com/marciovz/movie-store/main/src/assets/readme-files/screen-checkout.png" width="200" />
+src="https://raw.githubusercontent.com/marciovz/movie-store/main/src/assets/readme-files/screen-checkout.png" width="250" />
 <img alt="Movie Store Main" 
-src="https://raw.githubusercontent.com/marciovz/movie-store/main/src/assets/readme-files/screen-confimation.png" width="200" />
-<img alt="Movie Store Main" 
-src="https://raw.githubusercontent.com/marciovz/movie-store/main/src/assets/readme-files/screen-favorites.png" width="200" />
-
+src="https://raw.githubusercontent.com/marciovz/movie-store/main/src/assets/readme-files/screen-confimation.png" width="250" />
 </div>
+
 </div>
 
 ## 1 - Requisitos
@@ -37,7 +39,7 @@ src="https://raw.githubusercontent.com/marciovz/movie-store/main/src/assets/read
 ## 2 - Instalação
 
   Faça o download ou clone este repositório em sua máquina local.
-  Abra o terminal na pasta raís do projeto e rode o comando
+  Abra o terminal na pasta rais do projeto e rode o comando
 
 ```shell
   $ npm install
@@ -75,11 +77,11 @@ src="https://raw.githubusercontent.com/marciovz/movie-store/main/src/assets/read
 - axios
 - Phosphor React
 
-## Melhorias
+## 5 - Melhorias
 
 - Melhora o visual do layout
 - Fazer o layout para mobile
-- Carrocel de filmes horizontal com paginação
+- Carrossel de filmes horizontal com paginação
 - mascara nos inputs do formulário
 
 
