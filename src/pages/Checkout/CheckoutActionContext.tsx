@@ -9,6 +9,7 @@ import {
 import { useNavigate } from 'react-router-dom'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
+import { InvoiceContext } from '../../context/InvoiceContext'
 
 interface PropsCheckoutActionContextProvider {
   children: ReactNode
@@ -58,6 +59,8 @@ export function CheckoutActionContextProvider({
   })
   const { errors } = formState
 
+  const { solicitationInvoice } = useContext(InvoiceContext)
+
   const navigate = useNavigate()
 
   const handleCreateUser: SubmitHandler<CheckoutFormData> = async (
@@ -65,9 +68,8 @@ export function CheckoutActionContextProvider({
     event,
   ) => {
     event?.preventDefault()
-    console.log(data)
-    await new Promise((resolve) => setTimeout(resolve, 2000))
-
+    solicitationInvoice(data)
+    await new Promise((resolve) => setTimeout(resolve, 1000))
     navigate('/thanks')
   }
 

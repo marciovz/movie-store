@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components'
 import { CartMovieContextProvider } from './CartContext'
 import { FavoriteMovieContextProvider } from './FavoriteContext'
 import { RequestMovieContextProvider } from './RequestMoviesContext'
+import { InvoiceContextProvider } from './InvoiceContext'
 
 import { defaultTheme } from '../styles/themes/default'
 
@@ -17,13 +18,15 @@ interface PropsAppProvider {
 export function AppProviders({ children }: PropsAppProvider) {
   return (
     <CartMovieContextProvider>
-      <FavoriteMovieContextProvider>
-        <RequestMovieContextProvider>
-          <QueryClientProvider client={queryClient}>
-            <ThemeProvider theme={defaultTheme}>{children}</ThemeProvider>
-          </QueryClientProvider>
-        </RequestMovieContextProvider>
-      </FavoriteMovieContextProvider>
+      <InvoiceContextProvider>
+        <FavoriteMovieContextProvider>
+          <RequestMovieContextProvider>
+            <QueryClientProvider client={queryClient}>
+              <ThemeProvider theme={defaultTheme}>{children}</ThemeProvider>
+            </QueryClientProvider>
+          </RequestMovieContextProvider>
+        </FavoriteMovieContextProvider>
+      </InvoiceContextProvider>
     </CartMovieContextProvider>
   )
 }

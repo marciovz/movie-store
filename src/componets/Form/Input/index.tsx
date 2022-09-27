@@ -27,7 +27,7 @@ const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
       <input name={name} ref={ref} {...rest} />
       {error && (
         <Error title={error.message || ''}>
-          <WarningCircle size={20} color="#c53030" weight="fill" />
+          <WarningCircle size={20} color="#AB222E" weight="fill" />
         </Error>
       )}
     </Container>

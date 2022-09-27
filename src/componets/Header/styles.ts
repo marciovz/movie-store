@@ -1,7 +1,10 @@
 import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
+  position: fixed;
+  z-index: 100;
   width: 100%;
+  height: 6rem;
   background: ${(props) => props.theme['green-200']};
 `
 export const HeaderContent = styled.div`

@@ -9,14 +9,6 @@ interface IMovie {
   backdrop_path: string
   adult: boolean
   vote_count: number
-
-  // poster_path: string
-  // popularity: number
-  // original_title: string
-  // vote_average: 8.7
-  // original_language: string
-  // overview: string
-  // video: boolean
 }
 
 interface GetMoviesResponse {
@@ -35,7 +27,6 @@ const moviesUrl = import.meta.env.VITE_API
 const moviesUrlSearch = import.meta.env.VITE_API_SEARCH
 
 const apiKey = import.meta.env.VITE_API_KEY
-// const url = `${moviesUrl}top_rated` // ?${apiKey}
 const api = axios.create()
 
 async function getMovies({

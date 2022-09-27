@@ -1,19 +1,19 @@
 import styled from 'styled-components'
-import { shade } from 'polished'
+import { darken } from 'polished'
 
 export const Container = styled.button`
-  background: #ff9000;
-  height: 56px;
+  background: ${(props) => props.theme['green-300']};
+  height: 3.5rem;
   border-radius: 10px;
   border: 0;
-  padding: 0 16px;
-  color: #312e38;
+  padding: 0 16rem;
+  color: ${(props) => props.theme['gray-600']};
   width: 100%;
   font-weight: 500;
-  margin-top: 16px;
+  margin-top: 1rem;
   transition: background-color 0.2s;
 
   &:hover {
-    background: ${shade(0.2, '#ff9000')};
+    background: ${darken(0.2, `(props) => props.theme.[green-200]`)};
   }
 `

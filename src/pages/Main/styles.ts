@@ -6,9 +6,12 @@ export const Container = styled.div`
   align-items: center;
 
   div.input-filter {
-    margin-top: -1.687rem;
+    position: fixed;
+    margin-top: 4rem;
+    z-index: 101;
   }
 `
 export const Content = styled.div`
+  margin-top: 7rem;
   width: 80rem;
 `

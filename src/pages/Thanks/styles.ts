@@ -1,25 +1,25 @@
 import styled from 'styled-components'
 
 export const ThanksContainer = styled.div`
-  min-height: 900px;
+  min-height: 47rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
   h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: ${(props) => props.theme['gray-800']};
   }
 
   img {
-    width: 20em;
-    height: 20rem;
+    width: 18rem;
+    height: 18rem;
   }
 
   p {
     margin-top: 1rem;
-    font-size: 2.2rem;
+    font-size: 2rem;
     color: ${(props) => props.theme['gray-500']};
   }
 
