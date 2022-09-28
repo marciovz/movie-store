@@ -6,7 +6,7 @@
 
 # Introdução
 
-[Movie Store](https://github.com/marciovz/movie-store) é uma loja de filmes fictícia, onde o cliente pode procurar por um determinado filme, marcá-lo como favoritos, inserir em um carrinho de compra e finalizar sua compra.
+[Movie Store](https://github.com/marciovz/movie-store/){:target="_blank" rel="noopener"} é uma loja de filmes fictícia, onde o cliente pode procurar por um determinado filme, marcá-lo como favoritos, inserir em um carrinho de compra e finalizar sua compra.
 
 Acesse o [Site Movie Store](https://movie-store-mvz.vercel.app/) na web.
 
@@ -79,9 +79,10 @@ src="https://raw.githubusercontent.com/marciovz/movie-store/main/src/assets/read
 
 ## 5 - Melhorias
 
-- Melhora o visual do layout
+- Melhorar o visual do layout
 - Fazer o layout para mobile
 - Carrossel de filmes horizontal com paginação
 - mascara nos inputs do formulário
+- Implementar os testes
 
 
