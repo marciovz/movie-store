@@ -8,7 +8,7 @@
 
 [Movie Store](https://github.com/marciovz/movie-store) é uma loja de filmes fictícia, onde o cliente pode procurar por um determinado filme, marcá-lo como favoritos, inserir em um carrinho de compra e finalizar sua compra.
 
-Acesse o [Site Movie Store](https://movie-store-mvz.vercel.app/) na web.
+Acesse o [Site Movie Store](https://movie-store-mvz.vercel.app/){:target="_blank"} na web.
 
 <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
 
